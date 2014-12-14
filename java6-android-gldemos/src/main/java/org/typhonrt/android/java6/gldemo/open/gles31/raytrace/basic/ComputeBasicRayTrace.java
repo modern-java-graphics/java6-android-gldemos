@@ -1,5 +1,9 @@
 /**
+ * Copyright 2015 Kai Burjack
+ * See: https://github.com/LWJGL/lwjgl3/wiki/2.6.1.-Ray-tracing-with-OpenGL-Compute-Shaders-%28Part-I%29
+ *
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
+ * Converted to OpenGL ES 3.1 by Michael Leahy
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
