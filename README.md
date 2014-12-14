@@ -15,4 +15,4 @@ For full source code installation instructions refer to [the wiki / install guid
 
 If you found these demos useful consider backing his Kickstarter effort (closes in 12 hours!!) to launch a next generation video engine for Android which uses OpenGL ES 3.0+ and hardware accelerated media encoding / decoding.  Click the image below to check it out:
 <a href="https://www.kickstarter.com/projects/85808410/typhonrt-video-suite-next-gen-video-apps-for-andro-0" target="_blank"><img src="http://i.imgur.com/gWh4A8M.png" 
-alt="TyphonRT Video Suite" width="850" height="550" border="10" /></a>
+alt="TyphonRT Video Suite" width="850" height="500" border="10" /></a>
