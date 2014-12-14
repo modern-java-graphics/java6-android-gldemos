@@ -11,7 +11,7 @@ These samples require the latest Android Studio developer setup. To install Andr
 
 There is a prebuilt apk located which can be [downloaded directly](https://github.com/typhonrt/modern-java6-android-gldemos/raw/master/prebuilt-apk/ModernGL.apk). With the Android developers tools installed simply run "adb install ModernGL.apk". Select a demo by a single tap and long press to open a web page to a wiki page. Since the demos just launched the wiki info for each demo will be updated over the next week or two. 
 
-For full source code installation instructions refer to <a href="https://github.com/typhonrt/modern-java6-android-gldemos/wiki/installation" target="_blank">the wiki / install guide</a>. In time an expanded wiki will illuminate the full power of modern OpenGL with Java for Android. Please stay tuned as this effort is taken on by Michael Leahy, the author, in his spare time. 
+For full source code installation instructions refer to <a href="https://github.com/typhonrt/modern-java6-android-gldemos/wiki/installation" target="_blank">the wiki / install guide</a>. In time an expanded wiki will illuminate the full power of modern OpenGL with Java for Android. Please stay tuned as this effort is taken on by Michael Leahy, the author, in his spare time and more demos are forthcoming.
 
 If you found these demos useful consider backing his Kickstarter effort (closes in 12 hours!!) to launch a next generation video engine for Android which uses OpenGL ES 3.0+ and hardware accelerated media encoding / decoding.  Click the image below to check it out:
 <a href="https://www.kickstarter.com/projects/85808410/typhonrt-video-suite-next-gen-video-apps-for-andro-0" target="_blank"><img src="http://i.imgur.com/gWh4A8M.png" 
