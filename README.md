@@ -1,7 +1,7 @@
 
 ![Logo](http://i.imgur.com/UhCv44F.png "Logo")
 ============================
-Modern OpenGL/ES examples in Java are few and far between and this collection of demos showcases what is possible with OpenGL ES 3.0 / 3.1 + AEP. The purpose is to inform developers, but also provide a testbed for cross-device testing between various mobile GPUs. This repo contains only demo code and depends on [modern-java6-android-glframework](https://github.com/typhonrt/modern-java6-android-glframework)
+Modern OpenGL/ES examples in Java are few and far between and this collection of demos showcases what is possible with OpenGL ES 3.0 / 3.1 + AEP. The purpose is to inform developers, but also provide a testbed for cross-device testing between various mobile GPUs. This repo contains only demo code and depends on [modern-java6-android-glframework](https://github.com/typhonrt/modern-java6-android-glframework). By separating the GL framework code from the demos this allows you to use it separately as you see fit. The framework code provides concise utility code that makes working with OpenGL with Java easier and updates several utility classes like GLSurfaceView which has been "long in the tooth" in regard to the Android SDK utility code for OpenGL.  
 
 Device requirements: Android 5.0+ / OpenGL ES 3.0+ 
 
