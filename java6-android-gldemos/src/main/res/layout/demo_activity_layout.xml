@@ -1,0 +1,57 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <!-- Your normal content view -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        >
+
+        <org.typhonrt.android.java6.opengl.utils.GLSurfaceView2
+            android:id="@+id/glsurfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <!-- We use a Toolbar so that our drawer can be displayed
+             in front of the action bar -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="32dp"
+            android:layout_width="match_parent"
+            android:minHeight="32dp"
+            android:background="@android:color/transparent"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            />
+
+        <!-- Hidden view that forces drawer to draw full screen -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            />
+
+    </FrameLayout>
+
+    <!-- Your drawer view. This can be any view, LinearLayout
+         is just an example. As we have set fitSystemWindows=true
+         this will be displayed under the status bar. -->
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/toolbar_height"
+        android:layout_marginBottom="@dimen/system_bar_height"
+        android:choiceMode="singleChoice"
+        android:divider="@color/drawer_divider_color"
+        android:dividerHeight="@dimen/drawer_divider_height"
+        />
+
+</android.support.v4.widget.DrawerLayout>

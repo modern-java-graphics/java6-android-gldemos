@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:background="@android:color/transparent"
+              >
+
+    <!-- We use a Toolbar so that our drawer can be displayed
+         in front of the action bar -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="@dimen/toolbar_height_main"
+        android:layout_width="match_parent"
+        android:minHeight="@dimen/toolbar_height_main"
+        android:background="@color/toolbar_background"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <View
+        style="@style/ThinDivider"
+        />
+
+    <ListView
+        android:id="@+id/main_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@color/drawer_divider_color"
+        android:dividerHeight="@dimen/drawer_divider_height"
+        android:background="@android:color/transparent"
+        />
+
+</LinearLayout>

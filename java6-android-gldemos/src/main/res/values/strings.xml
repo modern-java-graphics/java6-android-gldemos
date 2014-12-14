@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ModernGL</string>
+    <string name="app_title">Modern Java OpenGL Demos (long click items for wiki)</string>
+
+    <string name="app_computeparticles">ComputeParticles</string>
+    <string name="app_computebasicraytrace">ComputeBasicRayTrace</string>
+    <string name="app_computeinvert">ComputeInvert</string>
+    <string name="app_computeinvertsampler">ComputeInvertSampler</string>
+    <string name="app_glslinvert">GLSLInvert</string>
+    <string name="app_glslkuwahara">GLSLKuwahara</string>
+    <string name="app_glslkuwaharafbo">GLSLKuwaharaFBO</string>
+
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_message">Your device does not support the required OpenGL ES version. Attempt to run the demo anyway?</string>
+    <string name="dialog_ok">Ok</string>
+    <string name="dialog_title">OpenGL ES version unsupported</string>
+
+    <string name="header_gles_3_0">"OpenGL ES 3.0 Demos"</string>
+    <string name="header_gles_3_1">"OpenGL ES 3.1 Demos"</string>
+
+
+
+</resources>

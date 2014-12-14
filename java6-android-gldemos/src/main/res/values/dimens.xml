@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="toolbar_height_main">40dp</dimen>
+    <dimen name="toolbar_height">34dp</dimen>
+    <dimen name="system_bar_height">48dp</dimen>
+
+    <dimen name="small_input_text_size">20sp</dimen>
+    <dimen name="standard_text_size">22sp</dimen>
+    <dimen name="medium_text_size">28sp</dimen>
+    <dimen name="large_text_size">36sp</dimen>
+    <dimen name="xlarge_text_size">48sp</dimen>
+    <dimen name="xxlarge_text_size">64sp</dimen>
+
+    <dimen name="drawer_divider_height">1dp</dimen>
+    <dimen name="drawer_objectmodel_padding">5dp</dimen>
+    <dimen name="drawer_seekbar_width">120dp</dimen>
+    <dimen name="drawer_text_padding">10dip</dimen>
+    <dimen name="drawer_width">300dp</dimen>
+</resources>

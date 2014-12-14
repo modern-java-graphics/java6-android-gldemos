@@ -1,0 +1,80 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.typhonrt.android.java6.gldemo">
+
+    <!-- Tell the system we need a minimum of OpenGL ES 3.0 support -->
+    <uses-feature
+        android:glEsVersion="0x00030000"
+        android:required="true"/>
+
+    <application
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/DemoTheme" >
+
+        <activity
+            android:name=".GLDemoActivity"
+            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".open.gles31.raytrace.basic.ComputeBasicRayTrace"
+            android:label="@string/app_computebasicraytrace"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".open.gles31.invert.ComputeInvert"
+            android:label="@string/app_computeinvert"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".open.gles31.invert.ComputeInvertSampler"
+            android:label="@string/app_computeinvertsampler"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".open.gles30.effects.GLSLInvert"
+            android:label="@string/app_glslinvert"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".open.gles30.effects.GLSLKuwahara"
+            android:label="@string/app_glslkuwahara"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+        <activity
+            android:name=".open.gles30.effects.GLSLKuwaharaFBO"
+            android:label="@string/app_glslkuwaharafbo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:keepScreenOn="true"
+            android:screenOrientation="landscape"
+            />
+
+    </application>
+
+</manifest>

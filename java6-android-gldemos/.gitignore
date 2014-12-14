@@ -1,0 +1,13 @@
+## Gradle
+.gradle/
+build/
+
+## Android Studio and Intellij and Android in general
+.idea/
+*.ipr
+*.iws
+*.iml
+local.properties
+
+## OS Specific
+.DS_Store
