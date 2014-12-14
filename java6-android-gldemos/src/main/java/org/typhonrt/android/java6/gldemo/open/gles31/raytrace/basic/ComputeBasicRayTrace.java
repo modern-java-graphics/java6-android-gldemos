@@ -108,8 +108,11 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
       int worksizeX = MathUtil.nextPow2(surfaceWidth);
       int worksizeY = MathUtil.nextPow2(surfaceHeight);
 
-      // Invoke the compute shader.
-      glDispatchCompute(worksizeX / workGroupSizeX, worksizeY / workGroupSizeY, 1);
+      // Invoke the compute shader, but only if workGroupSize X/Y is defined.
+      if (workGroupSizeX > 0 && workGroupSizeY > 0)
+      {
+         glDispatchCompute(worksizeX / workGroupSizeX, worksizeY / workGroupSizeY, 1);
+      }
 
       // Reset image binding.
       glBindImageTexture(0, 0, 0, false, 0, GL_READ_WRITE, GL_RGBA32F);
