@@ -7,6 +7,8 @@ Device requirements: Android 5.0+ / OpenGL ES 3.0+
 
 IDE requirements: Android Studio 1.0.1 / build tools: 21.1.2
 
+Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. Sadly Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6. 
+
 These samples require the latest Android Studio developer setup. To install Android Studio please <a href="http://developer.android.com/sdk/index.html" target="_blank">download it here</a>
 
 There is a prebuilt apk located which can be [downloaded directly](https://github.com/typhonrt/modern-java6-android-gldemos/raw/master/prebuilt-apk/ModernGL.apk). With the Android developers tools installed simply run "adb install ModernGL.apk". Select a demo by a single tap and long press to open a web page to a wiki page. Since the demos just launched the wiki info for each demo will be updated over the next week or two. 
