@@ -9,7 +9,7 @@ Device requirements: Android 5.0+ / OpenGL ES 3.0+
 
 IDE requirements: Android Studio 1.0.1 / build tools: 21.1.2
 
-Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. Sadly Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6. 
+Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. As things go Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6; a firmware update with a proper 3.1 driver is necessary. 
 
 These samples require the latest Android Studio developer setup. To install Android Studio please <a href="http://developer.android.com/sdk/index.html" target="_blank">download it here</a>
 
