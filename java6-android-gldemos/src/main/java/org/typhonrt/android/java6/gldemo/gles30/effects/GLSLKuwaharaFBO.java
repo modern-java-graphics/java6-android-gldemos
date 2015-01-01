@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.typhonrt.android.java6.gldemo.open.gles30.effects;
+package org.typhonrt.android.java6.gldemo.gles30.effects;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -36,9 +36,9 @@ import static android.opengl.GLES30.*;
 
 public class GLSLKuwaharaFBO extends BaseDemoActivity
 {
-   private static final String   s_VERT_SHADER_FILE = "shaders/open/gles30/common/directTexture.vert";
-   private static final String   s_FRAG_DIRECT_SHADER_FILE = "shaders/open/gles30/common/directTexture.frag";
-   private static final String   s_FRAG_KUWAHARA_SHADER_FILE = "shaders/open/gles30/effects/kuwaharaOptimized.frag";
+   private static final String   s_VERT_SHADER_FILE = "shaders/gles30/common/directTexture.vert";
+   private static final String   s_FRAG_DIRECT_SHADER_FILE = "shaders/gles30/common/directTexture.frag";
+   private static final String   s_FRAG_KUWAHARA_SHADER_FILE = "shaders/gles30/effects/kuwaharaOptimized.frag";
 
    private static final String   s_STR_ATTR_TEX_COORD = "aTexCoord";
    private static final String   s_STR_SAMPLE_STEP = "sampleStep";

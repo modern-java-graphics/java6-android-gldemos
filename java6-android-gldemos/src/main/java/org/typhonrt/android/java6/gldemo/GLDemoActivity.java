@@ -27,11 +27,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import org.typhonrt.android.java6.gldemo.gles30.effects.GLSLInvert;
+import org.typhonrt.android.java6.gldemo.gles30.effects.GLSLKuwahara;
+import org.typhonrt.android.java6.gldemo.gles30.effects.GLSLKuwaharaFBO;
 import org.typhonrt.commons.java6.opengl.utils.*;
 
-import org.typhonrt.android.java6.gldemo.open.gles30.effects.*;
-import org.typhonrt.android.java6.gldemo.open.gles31.invert.*;
-import org.typhonrt.android.java6.gldemo.open.gles31.raytrace.basic.ComputeBasicRayTrace;
+import org.typhonrt.android.java6.gldemo.gles31.invert.*;
+import org.typhonrt.android.java6.gldemo.gles31.raytrace.basic.ComputeBasicRayTrace;
 
 import org.typhonrt.android.java6.opengl.utils.AndroidGLESUtil;
 

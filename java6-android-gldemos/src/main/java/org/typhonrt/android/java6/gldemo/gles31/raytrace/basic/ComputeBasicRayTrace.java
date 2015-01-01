@@ -17,11 +17,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.typhonrt.android.java6.gldemo.open.gles31.raytrace.basic;
+package org.typhonrt.android.java6.gldemo.gles31.raytrace.basic;
 
 import android.content.res.Resources;
 
-import org.typhonrt.android.java6.gldemo.open.gles31.raytrace.shared.PinholeCamera;
+import org.typhonrt.android.java6.gldemo.gles31.raytrace.shared.PinholeCamera;
 import org.typhonrt.android.java6.gldemo.shared.BaseDemoActivity;
 
 import org.typhonrt.android.java6.opengl.utils.AndroidGLES31Util;
@@ -45,10 +45,10 @@ import static android.opengl.GLES31.*;
  */
 public class ComputeBasicRayTrace extends BaseDemoActivity
 {
-   private static final String   s_VERT_SHADER_FILE = "shaders/open/gles30/common/directTexture.vert";
-   private static final String   s_FRAG_SHADER_FILE = "shaders/open/gles30/common/directTexture.frag";
+   private static final String   s_VERT_SHADER_FILE = "shaders/gles30/common/directTexture.vert";
+   private static final String   s_FRAG_SHADER_FILE = "shaders/gles30/common/directTexture.frag";
 
-   private static final String   s_COMP_SHADER_FILE = "shaders/open/gles31/raytrace/basicraytrace.comp";
+   private static final String   s_COMP_SHADER_FILE = "shaders/gles31/raytrace/basicraytrace.comp";
 
    private static final String   s_STR_ATTR_TEX_COORD = "aTexCoord";
    private static final String   s_STR_IN_POSITION = "inPosition";

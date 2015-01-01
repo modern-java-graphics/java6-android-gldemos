@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.typhonrt.android.java6.gldemo.open.gles30.effects;
+package org.typhonrt.android.java6.gldemo.gles30.effects;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-
 
 import org.typhonrt.android.java6.gldemo.shared.BaseDemoActivity;
 
@@ -31,24 +30,22 @@ import org.typhonrt.android.java6.gldemo.R;
 
 import static android.opengl.GLES30.*;
 
-public class GLSLKuwahara extends BaseDemoActivity
+public class GLSLInvert extends BaseDemoActivity
 {
-   private static final String   s_VERT_SHADER_FILE = "shaders/open/gles30/common/directTexture.vert";
-   private static final String   s_FRAG_DIRECT_SHADER_FILE = "shaders/open/gles30/common/directTexture.frag";
-   private static final String   s_FRAG_KUWAHARA_SHADER_FILE = "shaders/open/gles30/effects/kuwaharaOptimized.frag";
+   private static final String   s_VERT_SHADER_FILE = "shaders/gles30/common/directTexture.vert";
+   private static final String   s_FRAG_SHADER_FILE = "shaders/gles30/color/invertTexture.frag";
 
-   private static final String   s_STR_SAMPLE_STEP = "sampleStep";
+   private static final String   s_STR_INTENSITY = "intensity";
 
-   private int                   directProgramID, kuwaharaProgramID;
+   private int                   shaderProgram;
 
-   private OptionModel           kuwaharaEnabled = new OptionModel("Enable", false);
-   private OptionModel           kuwaharaSampleStep = new OptionModel("Sample Step", 0, 1f / 1024f, 1f / 64f);
+   private OptionModel           invertEnabled = new OptionModel("Invert", false);
 
    protected void onCreate(Bundle savedInstanceState)
    {
       super.onCreate(savedInstanceState);
 
-      drawerControl.setOptionModels(new OptionModel[]{ kuwaharaEnabled, kuwaharaSampleStep});
+      drawerControl.setOptionModels(new OptionModel[]{invertEnabled});
    }
 
    public void onGLDrawFrame()
@@ -57,11 +54,7 @@ public class GLSLKuwahara extends BaseDemoActivity
 
       if (drawerControl.isOptionModelDirty())
       {
-         glUseProgram(kuwaharaEnabled.getBooleanValue() ? kuwaharaProgramID : directProgramID);
-
-         float sampleStep = kuwaharaSampleStep.getFloatValue();
-
-         glUniform2f(glGetUniformLocation(kuwaharaProgramID, s_STR_SAMPLE_STEP), sampleStep, sampleStep);
+         glUniform1f(glGetUniformLocation(shaderProgram, s_STR_INTENSITY), invertEnabled.getBooleanValue() ? 1f : 0f);
       }
 
       glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
@@ -76,20 +69,10 @@ public class GLSLKuwahara extends BaseDemoActivity
       // Quad (vertex + u/v); height / width provides aspect ratio
       GLBufferUtil.createQuadVertexUVBuffer((float) height / (float) width).bind();
 
-      glUseProgram(kuwaharaProgramID);
-
-      glVertexAttribPointer(glGetAttribLocation(directProgramID, "inPosition"), 3, GL_FLOAT, false,
+      glVertexAttribPointer(glGetAttribLocation(shaderProgram, "inPosition"), 3, GL_FLOAT, false,
        GLBufferUtil.s_QUAD_BUFFER_STRIDE, 0);
 
-      glVertexAttribPointer(glGetAttribLocation(directProgramID, "aTexCoord"), 2, GL_FLOAT, false,
-       GLBufferUtil.s_QUAD_BUFFER_STRIDE, GLBufferUtil.s_QUAD_UV_OFFSET);
-
-      glUseProgram(directProgramID);
-
-      glVertexAttribPointer(glGetAttribLocation(directProgramID, "inPosition"), 3, GL_FLOAT, false,
-       GLBufferUtil.s_QUAD_BUFFER_STRIDE, 0);
-
-      glVertexAttribPointer(glGetAttribLocation(directProgramID, "aTexCoord"), 2, GL_FLOAT, false,
+      glVertexAttribPointer(glGetAttribLocation(shaderProgram, "aTexCoord"), 2, GL_FLOAT, false,
        GLBufferUtil.s_QUAD_BUFFER_STRIDE, GLBufferUtil.s_QUAD_UV_OFFSET);
    }
 
@@ -100,33 +83,22 @@ public class GLSLKuwahara extends BaseDemoActivity
 
       Resources resources = getResources();
 
+      // Create shader program
+      shaderProgram = AndroidGLES30Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE, s_FRAG_SHADER_FILE);
+
       // Load texture from R.drawable.flower1024 (flip due to GL coordinates)
       int textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
+
+      glUseProgram(shaderProgram);
 
       // Bind texture to texture unit 0
       glActiveTexture(GL_TEXTURE0);
       glBindTexture(GL_TEXTURE_2D, textureID);
 
+      // Set sampler2d in GLSL fragment shader to texture unit 0
+      glUniform1i(glGetUniformLocation(shaderProgram, "uSourceTex"), 0);
+
       glEnableVertexAttribArray(0);
       glEnableVertexAttribArray(1);
-
-      // Create shader program
-      directProgramID = AndroidGLES30Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE,
-       s_FRAG_DIRECT_SHADER_FILE);
-
-      glUseProgram(directProgramID);
-
-      // Set sampler2d in GLSL fragment shader to texture unit 0
-      glUniform1i(glGetUniformLocation(directProgramID, "uSourceTex"), 0);
-
-
-      // Create shader program
-      kuwaharaProgramID = AndroidGLES30Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE,
-       s_FRAG_KUWAHARA_SHADER_FILE);
-
-      glUseProgram(kuwaharaProgramID);
-
-      // Set sampler2d in GLSL fragment shader to texture unit 0
-      glUniform1i(glGetUniformLocation(kuwaharaProgramID, "uSourceTex"), 0);
    }
 }

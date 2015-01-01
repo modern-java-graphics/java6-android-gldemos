@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.typhonrt.android.java6.gldemo.open.gles31.invert;
+package org.typhonrt.android.java6.gldemo.gles31.invert;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -32,12 +32,12 @@ import org.typhonrt.android.java6.gldemo.R;
 
 import static android.opengl.GLES31.*;
 
-public class ComputeInvertSampler extends BaseDemoActivity
+public class ComputeInvert extends BaseDemoActivity
 {
-   private static final String   s_VERT_SHADER_FILE = "shaders/open/gles30/common/directTexture.vert";
-   private static final String   s_FRAG_SHADER_FILE = "shaders/open/gles30/common/directTexture.frag";
+   private static final String   s_VERT_SHADER_FILE = "shaders/gles30/common/directTexture.vert";
+   private static final String   s_FRAG_SHADER_FILE = "shaders/gles30/common/directTexture.frag";
 
-   private static final String   s_COMP_SHADER_FILE = "shaders/open/gles31/color/invertTextureSampler.comp";
+   private static final String   s_COMP_SHADER_FILE = "shaders/gles31/color/invertTexture.comp";
 
    private static final int      s_WORKGROUP_SIZE = 16;
 
@@ -46,7 +46,7 @@ public class ComputeInvertSampler extends BaseDemoActivity
 
    private OptionModel           invertEnabled = new OptionModel("Invert", false);
 
-   public ComputeInvertSampler()
+   public ComputeInvert()
    {
       super(XeGLES3.GLES3_1);  // Require OpenGL ES 3.1 context
    }
@@ -87,10 +87,7 @@ public class ComputeInvertSampler extends BaseDemoActivity
    {
       glUseProgram(computeProgramID);
 
-      // Use sampler for source texture; this shows that compute shaders are still GLSL oriented!
-      glActiveTexture(GL_TEXTURE0);
-      glBindTexture(GL_TEXTURE_2D, sourceTextureID);
-
+      glBindImageTexture(0, sourceTextureID, 0, false, 0, GL_READ_ONLY, GL_RGBA8);
       glBindImageTexture(1, resultTextureID, 0, false, 0, GL_WRITE_ONLY, GL_RGBA8);
 
       glDispatchCompute(width / s_WORKGROUP_SIZE, height / s_WORKGROUP_SIZE, 1);
@@ -131,10 +128,6 @@ public class ComputeInvertSampler extends BaseDemoActivity
       sourceTextureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
 
       resultTextureID = AndroidGLES30Util.createTexture(GL_RGBA8, 1024, 1024);
-
-      glUseProgram(computeProgramID);
-
-      glUniform2f(glGetUniformLocation(computeProgramID, "imageSize"), 1024, 1024);
 
       glUseProgram(directProgramID);
 

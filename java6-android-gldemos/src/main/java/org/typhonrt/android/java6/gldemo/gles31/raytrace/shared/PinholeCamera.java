@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.typhonrt.android.java6.gldemo.open.gles31.raytrace.shared;
+package org.typhonrt.android.java6.gldemo.gles31.raytrace.shared;
 
 import org.typhonrt.java6.vecmath.Matrix4f;
 import org.typhonrt.java6.vecmath.Vector3f;

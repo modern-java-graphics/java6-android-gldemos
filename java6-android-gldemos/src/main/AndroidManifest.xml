@@ -28,7 +28,7 @@
         </activity>
 
         <activity
-            android:name=".open.gles31.raytrace.basic.ComputeBasicRayTrace"
+            android:name=".gles31.raytrace.basic.ComputeBasicRayTrace"
             android:label="@string/app_computebasicraytrace"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
@@ -36,7 +36,7 @@
             />
 
         <activity
-            android:name=".open.gles31.invert.ComputeInvert"
+            android:name=".gles31.invert.ComputeInvert"
             android:label="@string/app_computeinvert"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
@@ -44,7 +44,7 @@
             />
 
         <activity
-            android:name=".open.gles31.invert.ComputeInvertSampler"
+            android:name=".gles31.invert.ComputeInvertSampler"
             android:label="@string/app_computeinvertsampler"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
@@ -52,7 +52,7 @@
             />
 
         <activity
-            android:name=".open.gles30.effects.GLSLInvert"
+            android:name=".gles30.effects.GLSLInvert"
             android:label="@string/app_glslinvert"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
@@ -60,7 +60,7 @@
             />
 
         <activity
-            android:name=".open.gles30.effects.GLSLKuwahara"
+            android:name=".gles30.effects.GLSLKuwahara"
             android:label="@string/app_glslkuwahara"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
@@ -68,7 +68,7 @@
             />
 
         <activity
-            android:name=".open.gles30.effects.GLSLKuwaharaFBO"
+            android:name=".gles30.effects.GLSLKuwaharaFBO"
             android:label="@string/app_glslkuwaharafbo"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:keepScreenOn="true"
