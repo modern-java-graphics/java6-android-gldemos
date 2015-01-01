@@ -5,6 +5,5 @@ include ':java6-android-demoframework', ':java6-android-glutils', ':java6-glutil
 
 project(':java6-android-demoframework').projectDir = new File(settingsDir, '../modern-java6-android-demoframework/java6-android-demoframework')
 project(':java6-android-glutils').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-android-glutils')
-project(':java6-data-optionmodel').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-data-optionmodel')
 project(':java6-glutils-commons').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-glutils-commons')
 project(':java6-math').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-math')
