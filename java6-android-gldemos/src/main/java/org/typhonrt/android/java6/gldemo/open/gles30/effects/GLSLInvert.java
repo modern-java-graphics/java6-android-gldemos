@@ -23,7 +23,7 @@ import org.typhonrt.android.java6.gldemo.shared.BaseDemoActivity;
 import org.typhonrt.android.java6.opengl.utils.AndroidGLES30Util;
 import org.typhonrt.android.java6.opengl.utils.GLBufferUtil;
 
-import org.typhonrt.java6.data.option.model.OptionModel;
+import org.typhonrt.android.java6.data.option.model.OptionModel;
 
 import org.typhonrt.android.java6.gldemo.R;
 

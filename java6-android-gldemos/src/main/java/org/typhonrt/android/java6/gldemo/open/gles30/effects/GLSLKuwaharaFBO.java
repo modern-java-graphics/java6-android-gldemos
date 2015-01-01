@@ -27,7 +27,7 @@ import org.typhonrt.android.java6.opengl.utils.FBOUtil;
 import org.typhonrt.android.java6.opengl.utils.GLBuffer;
 import org.typhonrt.android.java6.opengl.utils.GLBufferUtil;
 
-import org.typhonrt.java6.data.option.model.OptionModel;
+import org.typhonrt.android.java6.data.option.model.OptionModel;
 
 import org.typhonrt.android.java6.gldemo.R;
 
