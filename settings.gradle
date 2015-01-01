@@ -1,9 +1,9 @@
 include ':java6-android-gldemos'
 
 // External project dependencies
-include ':java6-android-optioncontrol', ':java6-android-glutils', ':java6-data-optionmodel', ':java6-glutils-commons', ':java6-math'
+include ':java6-android-demoframework', ':java6-android-glutils', ':java6-glutils-commons', ':java6-math'
 
-project(':java6-android-optioncontrol').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-android-optioncontrol')
+project(':java6-android-demoframework').projectDir = new File(settingsDir, '../modern-java6-android-demoframework/java6-android-demoframework')
 project(':java6-android-glutils').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-android-glutils')
 project(':java6-data-optionmodel').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-data-optionmodel')
 project(':java6-glutils-commons').projectDir = new File(settingsDir, '../modern-java6-android-glframework/java6-glutils-commons')
