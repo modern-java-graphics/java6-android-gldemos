@@ -23,9 +23,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile project(':java6-android-demoframework')
     compile project(':java6-android-glutils')
-    compile project(':java6-android-optioncontrol')
-    compile project(':java6-data-optionmodel')
     compile project(':java6-glutils-commons')
     compile project(':java6-math')
 }
