@@ -1,13 +1,16 @@
 
 ![Logo](http://i.imgur.com/UhCv44F.png "Logo")
 ============================
-New: A <a href="https://groups.google.com/forum/#!forum/modern-java6-android-gldemos" target="_blank">Google web forum</a> is now available to discuss anything related to this modern OpenGL utility framework. If you have questions or comments about modern OpenGL with Java for Android check out the web forum and post your question. 
-
-Modern OpenGL/ES examples in Java are few and far between and this collection of demos showcases what is possible with OpenGL ES 3.0 / 3.1 + AEP. The purpose is to inform developers, but also provide a testbed for cross-device testing between various mobile GPUs. This repo contains only demo code and depends on <a href="https://github.com/typhonrt/modern-java6-android-glframework" target="_blank">modern-java6-android-glframework</a>. By separating the GL framework code from the demos this allows you to use it separately as you see fit. The framework code provides concise utility code that makes working with OpenGL with Java easier and updates several utility classes like GLSurfaceView which has been "long in the tooth" in regard to the Android SDK utility code for OpenGL.  
+Modern OpenGL/ES examples in Java are few and far between and this collection of demos showcases what is possible with OpenGL ES 3.0 / 3.1 + AEP. The purpose is to inform developers, but also provide a testbed for cross-device testing between various mobile GPUs. This repo contains only demo code and depends on <a href="https://github.com/typhonrt/modern-java6-android-glframework" target="_blank">modern-java6-android-glframework</a> and <a href="https://github.com/typhonrt/modern-java6-android-demoframework" target="_blank">modern-java6-android-demoframework</a>. By separating the GL and demo framework code from the demos this allows you to use it separately as you see fit and also allow for a forthcoming port of the Nvidia Gameworks demos to a separate repo which will carry a different license than Apache 2. The GL framework code provides concise utility code that makes working with OpenGL with Java easier and updates several utility classes like GLSurfaceView which has been "long in the tooth" in regard to the Android SDK utility code for OpenGL. The demoframework code contains basic utilities for providing an Android GUI for the demos. 
 
 Device requirements: Android 5.0+ / OpenGL ES 3.0+ 
 
 IDE requirements: Android Studio 1.0.1 / build tools: 21.1.2
+
+Latest Update (1.1.15): I finally had a chance to do some refactoring this afternoon, so 
+<a href="https://groups.google.com/forum/#!topic/modern-java6-android-gldemos/cKGEl9X-cpU" target="_blank">check out this post for more information.</a>
+
+New: A <a href="https://groups.google.com/forum/#!forum/modern-java6-android-gldemos" target="_blank">Google web forum</a> is now available to discuss anything related to this modern OpenGL utility framework. If you have questions or comments about modern OpenGL with Java for Android check out the web forum and post your question. 
 
 Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. As things go Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6; a firmware update with a proper 3.1 driver is necessary. 
 
