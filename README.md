@@ -16,7 +16,9 @@ Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. As 
 
 These samples require the latest Android Studio developer setup. To install Android Studio please <a href="http://developer.android.com/sdk/index.html" target="_blank">download it here</a>
 
-There is a prebuilt apk located which can be [downloaded directly](https://github.com/typhonrt/modern-java6-android-gldemos/raw/master/prebuilt-apk/ModernGL.apk). With the Android developers tools installed simply run "adb install ModernGL.apk". Select a demo by a single tap and long press to open a web page to a wiki page. Since the demos just launched the wiki info for each demo will be updated over the next week or two. 
+There is a prebuilt apk located which can be [downloaded directly](https://github.com/typhonrt/modern-java6-android-gldemos/raw/master/prebuilt-apk/ModernGL.apk). With the Android developers tools installed simply run "adb install ModernGL.apk". An even easier way to install the GL demos app is to view this web page from your Android phone after enabling installation of apps from unknown sources. To do this turn on "unknown sources" in the Settings->Security section of your phone then click the link above. When it finishes downloading you should be able to install it directly on your device without needing ADB.
+
+To navigate in the GL demos app select a demo by a single tap and long press to open a web page to a wiki page. Since the demos just launched the wiki info for each demo will be updated eventually with more details. 
 
 For full source code installation instructions refer to <a href="https://github.com/typhonrt/modern-java6-android-gldemos/wiki/installation" target="_blank">the wiki / install guide</a>. In time an expanded wiki will illuminate the full power of modern OpenGL with Java for Android. Please stay tuned as this effort is taken on by Michael Leahy, the author, in his spare time and more demos are forthcoming.
 
