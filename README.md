@@ -7,12 +7,18 @@ Device requirements: Android 5.0+ / OpenGL ES 3.0+
 
 IDE requirements: Android Studio 1.0.1 / build tools: 21.1.2
 
-Latest Update (1.1.15): I finally had a chance to do some refactoring this afternoon, so 
+Latest Updates
+========
+
+(4.15.15): I finally had the chance to take a look at the Android 5.1 update for the Nexus 6 which brought a GPU driver update from Qualcomm, but it has flaws that prevent the compute shader examples from running which I 
+<a href="https://groups.google.com/forum/#!topic/modern-java6-android-gldemos/e28OM-h7Kpw" target="_blank">discuss in this post on the forums.</a>
+
+(1.1.15): I finally had a chance to do some refactoring this afternoon, so 
 <a href="https://groups.google.com/forum/#!topic/modern-java6-android-gldemos/cKGEl9X-cpU" target="_blank">check out this post for more information.</a>
 
 New: A <a href="https://groups.google.com/forum/#!forum/modern-java6-android-gldemos" target="_blank">Google web forum</a> is now available to discuss anything related to this modern OpenGL utility framework. If you have questions or comments about modern OpenGL with Java for Android check out the web forum and post your question. 
 
-Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly. As things go Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6; a firmware update with a proper 3.1 driver is necessary. 
+Right now only NVidia Tegra K1 based devices support OpenGL ES 3.1 properly from my device testing. Originally, Qualcomm / Motorola only shipped OpenGL ES 3.0 drivers for the Nexus 6. A firmware update w/ Android 5.1 for the Nexus 6 arrived, but the Qualcomm GPU driver has flaws such that the compute shader examples fail to run. See the 4.15.15 update above for more info.
 
 These samples require the latest Android Studio developer setup. To install Android Studio please <a href="http://developer.android.com/sdk/index.html" target="_blank">download it here</a>
 
