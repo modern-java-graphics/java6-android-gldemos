@@ -1,3 +1,4 @@
+#version 300 es
 /**
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
  *
@@ -15,8 +16,6 @@
  */
 
 // Invert fragment shader - Inverts texture color by a given intensity between 0.0 (normal) - 1.0 (full invert);
-
-#version 300 es
 
 precision mediump float;
 

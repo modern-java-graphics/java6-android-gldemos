@@ -1,3 +1,4 @@
+#version 300 es
 /**
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
  *
@@ -15,8 +16,6 @@
  */
 
 // Direct texture fragment shader
-
-#version 300 es
 
 precision mediump float;
 

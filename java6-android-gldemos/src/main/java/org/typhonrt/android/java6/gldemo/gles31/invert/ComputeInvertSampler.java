@@ -18,12 +18,11 @@ package org.typhonrt.android.java6.gldemo.gles31.invert;
 import android.content.res.Resources;
 import android.os.Bundle;
 
-import org.typhonrt.commons.java6.opengl.utils.XeGLES3;
-
 import org.typhonrt.android.java6.gldemo.shared.BaseDemoActivity;
 
-import org.typhonrt.android.java6.opengl.utils.AndroidGLES30Util;
+import org.typhonrt.android.java6.opengl.utils.AndroidGLES31Util;
 import org.typhonrt.android.java6.opengl.utils.GLBufferUtil;
+import org.typhonrt.commons.java6.opengl.utils.XeGLES3;
 
 import org.typhonrt.android.java6.data.option.model.OptionModel;
 
@@ -39,7 +38,9 @@ public class ComputeInvertSampler extends BaseDemoActivity
 
    private static final String   s_COMP_SHADER_FILE = "shaders/gles31/color/invertTextureSampler.comp";
 
-   private static final int      s_WORKGROUP_SIZE = 16;
+   private static final String   S_COMP_SHADER_HEADER = "#version 310 es\n#define LOCAL_SIZE %d\n";
+
+   private int                   workgroupSize;
 
    private int                   directProgramID, computeProgramID;
    private int                   sourceTextureID, resultTextureID;
@@ -93,7 +94,7 @@ public class ComputeInvertSampler extends BaseDemoActivity
 
       glBindImageTexture(1, resultTextureID, 0, false, 0, GL_WRITE_ONLY, GL_RGBA8);
 
-      glDispatchCompute(width / s_WORKGROUP_SIZE, height / s_WORKGROUP_SIZE, 1);
+      glDispatchCompute(width / workgroupSize, height / workgroupSize, 1);
 
       // GL_COMPUTE_SHADER_BIT is the same as GL_SHADER_IMAGE_ACCESS_BARRIER_BIT
       glMemoryBarrier(GL_COMPUTE_SHADER_BIT);
@@ -123,18 +124,21 @@ public class ComputeInvertSampler extends BaseDemoActivity
 
       Resources resources = getResources();
 
+      workgroupSize = AndroidGLES31Util.getMaxComputePowerWorkGroupSize(2);
+
       // Create shader programs
-      directProgramID = AndroidGLES30Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE, s_FRAG_SHADER_FILE);
-      computeProgramID = AndroidGLES30Util.buildProgramFromAssets(resources, s_COMP_SHADER_FILE, GL_COMPUTE_SHADER);
+      directProgramID = AndroidGLES31Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE, s_FRAG_SHADER_FILE);
+      computeProgramID = AndroidGLES31Util.buildProgramFromAssets(resources, s_COMP_SHADER_FILE, GL_COMPUTE_SHADER,
+       String.format(S_COMP_SHADER_HEADER, workgroupSize));
 
       // Load texture from R.drawable.flower1024 (flip due to GL coordinates)
-      sourceTextureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
+      sourceTextureID = AndroidGLES31Util.loadTexture(resources, R.drawable.flower1024, GL_RGBA8, true);
 
-      resultTextureID = AndroidGLES30Util.createTexture(GL_RGBA8, 1024, 1024);
+      resultTextureID = AndroidGLES31Util.createTexture(GL_RGBA8, 1024, 1024);
 
       glUseProgram(computeProgramID);
 
-      glUniform2f(glGetUniformLocation(computeProgramID, "imageSize"), 1024, 1024);
+      glUniform2f(glGetUniformLocation(computeProgramID, "imageDimension"), 1024, 1024);
 
       glUseProgram(directProgramID);
 

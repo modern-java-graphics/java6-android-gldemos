@@ -1,3 +1,5 @@
+// Note: A string header with GLSL version and #defines is added here.
+
 /**
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
  *
@@ -16,11 +18,9 @@
 
 // Compute shader to invert texture.
 
-#version 310 es
-
-layout (local_size_x = 16, local_size_y = 16) in;
-layout(binding=0, rgba8) uniform mediump image2D inputImage;
-layout(binding=1, rgba8) uniform mediump image2D resultImage;
+layout(local_size_x = LOCAL_SIZE, local_size_y = LOCAL_SIZE) in;
+layout(binding=0, rgba8) uniform mediump readonly image2D inputImage;
+layout(binding=1, rgba8) uniform mediump writeonly image2D resultImage;
 
 void main()
 {

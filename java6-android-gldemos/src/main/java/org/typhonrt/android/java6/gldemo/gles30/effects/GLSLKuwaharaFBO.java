@@ -150,7 +150,7 @@ public class GLSLKuwaharaFBO extends BaseDemoActivity
       frameBufferObject = FBOUtil.initialize(new FBOData(), 1024, 1024);
 
       // Load texture from R.drawable.flower1024 (flip due to GL coordinates)
-      textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
+      textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, GL_RGBA8, true);
 
       // Bind texture to texture unit 0
       glActiveTexture(GL_TEXTURE0);

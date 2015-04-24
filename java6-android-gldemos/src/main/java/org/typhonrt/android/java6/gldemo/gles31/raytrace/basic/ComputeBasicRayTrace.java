@@ -22,6 +22,7 @@ package org.typhonrt.android.java6.gldemo.gles31.raytrace.basic;
 import android.content.res.Resources;
 
 import org.typhonrt.android.java6.gldemo.gles31.raytrace.shared.PinholeCamera;
+
 import org.typhonrt.android.java6.gldemo.shared.BaseDemoActivity;
 
 import org.typhonrt.android.java6.opengl.utils.AndroidGLES31Util;
@@ -32,11 +33,6 @@ import org.typhonrt.commons.java6.opengl.utils.XeGLES3;
 
 import org.typhonrt.java6.math.MathUtil;
 import org.typhonrt.java6.vecmath.Vector3f;
-
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.IntBuffer;
-
 
 import static android.opengl.GLES31.*;
 
@@ -50,6 +46,8 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
 
    private static final String   s_COMP_SHADER_FILE = "shaders/gles31/raytrace/basicraytrace.comp";
 
+   private static final String   S_COMP_SHADER_HEADER = "#version 310 es\n#define LOCAL_SIZE %d\n";
+
    private static final String   s_STR_ATTR_TEX_COORD = "aTexCoord";
    private static final String   s_STR_IN_POSITION = "inPosition";
 
@@ -59,6 +57,8 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
    private static final float    s_FIELD_OF_VIEW_Y = 60f;
    private static final float    s_NEAR = 1f;
    private static final float    s_FAR = 2f;
+
+   private int                   workgroupSize;
 
    private int                   surfaceWidth, surfaceHeight;
 
@@ -75,7 +75,7 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
    private int                   ray01Uniform;
    private int                   ray11Uniform;
 
-   private int                   workGroupSizeX, workGroupSizeY;
+//   private int                   workGroupSizeX, workGroupSizeY;
 
    private PinholeCamera         camera = new PinholeCamera();
 
@@ -113,9 +113,9 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
       int worksizeY = MathUtil.nextPow2(surfaceHeight);
 
       // Invoke the compute shader, but only if workGroupSize X/Y is defined.
-      if (workGroupSizeX > 0 && workGroupSizeY > 0)
+      if (workgroupSize > 0)
       {
-         glDispatchCompute(worksizeX / workGroupSizeX, worksizeY / workGroupSizeY, 1);
+         glDispatchCompute(worksizeX / workgroupSize, worksizeY / workgroupSize, 1);
       }
 
       // Reset image binding.
@@ -164,7 +164,11 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
 
       squareBuffer = GLBufferUtil.createQuadVertexUVBuffer(1);
 
-      computeProgramID = AndroidGLES31Util.buildProgramFromAssets(resources, s_COMP_SHADER_FILE, GL_COMPUTE_SHADER);
+      workgroupSize = AndroidGLES31Util.getMaxComputePowerWorkGroupSize(2);
+
+      computeProgramID = AndroidGLES31Util.buildProgramFromAssets(resources, s_COMP_SHADER_FILE, GL_COMPUTE_SHADER,
+       String.format(S_COMP_SHADER_HEADER, workgroupSize));
+
       initComputeProgram();
 
       directProgramID = AndroidGLES31Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE, s_FRAG_SHADER_FILE);
@@ -181,14 +185,6 @@ public class ComputeBasicRayTrace extends BaseDemoActivity
    private void initComputeProgram()
    {
       glUseProgram(computeProgramID);
-
-      IntBuffer workGroupSize = ByteBuffer.allocateDirect(MathUtil.s_INTEGER_SIZE_BYTES * 3).order(
-       ByteOrder.nativeOrder()).asIntBuffer();
-
-      glGetProgramiv(computeProgramID, GL_COMPUTE_WORK_GROUP_SIZE, workGroupSize);
-
-      workGroupSizeX = workGroupSize.get(0);
-      workGroupSizeY = workGroupSize.get(1);
 
       eyeUniform = glGetUniformLocation(computeProgramID, "eye");
       ray00Uniform = glGetUniformLocation(computeProgramID, "ray00");

@@ -1,3 +1,4 @@
+#version 300 es
 /**
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
  *
@@ -22,8 +23,6 @@
 //
 // Anisotropic Kuwahara Filtering on the GPU
 // by Jan Eric Kyprianidis <www.kyprianidis.com>
-
-#version 300 es
 
 precision highp float;
 in vec2 vTexCoord;

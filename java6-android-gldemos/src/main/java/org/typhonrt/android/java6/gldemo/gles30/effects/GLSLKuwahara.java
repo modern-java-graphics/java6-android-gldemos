@@ -101,7 +101,7 @@ public class GLSLKuwahara extends BaseDemoActivity
       Resources resources = getResources();
 
       // Load texture from R.drawable.flower1024 (flip due to GL coordinates)
-      int textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
+      int textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, GL_RGBA8, true);
 
       // Bind texture to texture unit 0
       glActiveTexture(GL_TEXTURE0);

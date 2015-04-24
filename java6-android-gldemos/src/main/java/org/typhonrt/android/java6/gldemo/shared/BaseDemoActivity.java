@@ -59,6 +59,7 @@ public abstract class BaseDemoActivity extends ActionBarActivity implements GLSu
       this.requestedGLVersion = requestedGLVersion;
    }
 
+   @Override
    protected void onCreate(Bundle savedInstanceState)
    {
       super.onCreate(savedInstanceState);
@@ -80,6 +81,7 @@ public abstract class BaseDemoActivity extends ActionBarActivity implements GLSu
       surfaceView.setRenderMode(GLSurfaceView2.s_RENDERMODE_CONTINUOUSLY);
    }
 
+   @Override
    public void onGLContextCreated()
    {
       GLSurfaceView2 surfaceView = (GLSurfaceView2)findViewById(R.id.glsurfaceview);

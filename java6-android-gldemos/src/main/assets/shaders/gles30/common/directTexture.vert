@@ -1,3 +1,4 @@
+#version 300 es
 /**
  * Copyright 2015 Michael Leahy / TyphonRT, Inc.
  *
@@ -15,8 +16,6 @@
  */
 
 // Defines a simple shader to forward on vertex and u/v.
-
-#version 300 es
 
 in vec4 inPosition;
 in highp vec2 aTexCoord;

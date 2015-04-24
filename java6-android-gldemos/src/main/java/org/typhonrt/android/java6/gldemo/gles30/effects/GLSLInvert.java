@@ -87,7 +87,7 @@ public class GLSLInvert extends BaseDemoActivity
       shaderProgram = AndroidGLES30Util.buildProgramFromAssets(resources, s_VERT_SHADER_FILE, s_FRAG_SHADER_FILE);
 
       // Load texture from R.drawable.flower1024 (flip due to GL coordinates)
-      int textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, true);
+      int textureID = AndroidGLES30Util.loadTexture(resources, R.drawable.flower1024, GL_RGBA8, true);
 
       glUseProgram(shaderProgram);
 
