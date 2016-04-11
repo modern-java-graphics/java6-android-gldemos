@@ -3,13 +3,13 @@
 ============================
 Modern OpenGL/ES examples in Java are few and far between and this collection of demos showcases what is possible with OpenGL ES 3.0 / 3.1 / 3.2 (forthcoming). The purpose is to inform developers, but also provide a testbed for cross-device testing between various mobile GPUs. This repo contains only demo code and depends on <a href="https://github.com/modern-java-graphics/java6-android-glframework" target="_blank">java6-android-glframework</a> and <a href="https://github.com/modern-java-graphics/java6-android-demoframework" target="_blank">java6-android-demoframework</a>. By separating the GL and demo framework code from the demos this allows you to use it separately as you see fit and also allow for a forthcoming port of the Nvidia Gameworks demos to a separate repo which will carry a different license than MPL v2 or Apache 2. The GL framework code provides concise utility code that makes working with OpenGL with Java easier and updates several utility classes like GLSurfaceView which has been "long in the tooth" in regard to the Android SDK utility code for OpenGL. The demoframework code contains basic utilities for providing an Android GUI for the demos. 
 
-Device requirements: Android 5.0+ / OpenGL ES 3.0+ 
+Device requirements: Android 4.4+ / OpenGL ES 3.0+ 
 
 IDE requirements: Android Studio 2.x+ / build tools: 23.0.3
 
 Latest Updates
 ========
-(4.10.16): Update for Android Studio 2.x+ / moved repos to [modern-java-graphics](https://github.com/modern-java-graphics) organization. Moved Google Groups forum to <a href="https://groups.google.com/forum/#!forum/modern-java-graphics" target="_blank">modern-java-graphics</a>. Changed licenses for [java6-android-glframework](https://github.com/modern-java-graphics/java6-android-glframework) and [java6-android-demoframework](https://github.com/modern-java-graphics/java6-android-demoframework) to `MPL v2.0`. This repo (java6-android-gldemos) remains available via `Apache 2`.
+(4.10.16): Update for Android Studio 2.x+ / moved repos to [modern-java-graphics](https://github.com/modern-java-graphics) organization. Moved Google Groups forum to <a href="https://groups.google.com/forum/#!forum/modern-java-graphics" target="_blank">modern-java-graphics</a>. Lowered API level to 19 / Kitkat. Changed licenses for [java6-android-glframework](https://github.com/modern-java-graphics/java6-android-glframework) and [java6-android-demoframework](https://github.com/modern-java-graphics/java6-android-demoframework) to `MPL v2.0`. This repo (java6-android-gldemos) remains available via `Apache 2`.
 
 (4.15.15): I finally had the chance to take a look at the Android 5.1 update for the Nexus 6 which brought a GPU driver update from Qualcomm, but it has flaws that prevent the compute shader examples from running which I 
 <a href="https://groups.google.com/forum/#!topic/modern-java-graphics/e28OM-h7Kpw" target="_blank">discuss in this post on the forums.</a>
